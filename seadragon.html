@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+ <html>
+    <head>
+
+        <script type="text/javascript"
+              src="./OpenSeadragon.debug.js">
+        </script>
+        <script type="text/javascript">
+            var viewer = null;
+			var djbase = "http://localhost:8080/adore-djatoka/resolver?url_ver=Z39.88-2004&rft_id=http%3A%2F%2Flocalhost%3A8080%2Fadore-djatoka%2Floc.jp2&svc_id=info:lanl-repo/svc/getRegion&svc_val_fmt=info:ofi/fmt:kev:mtx:jpeg2000&svc.format=image/jpeg&svc.rotate=0"
+	//	var djbase = "http://localhost:8080/adore-djatoka/resolver?url_ver=Z39.88-2004&rft_id=http%3A%2F%2Flocalhost%3A8080%2Fadore-djatoka%2Fkaye.jp2&svc_id=info:lanl-repo/svc/getRegion&svc_val_fmt=info:ofi/fmt:kev:mtx:jpeg2000&svc.format=image/jpeg&svc.rotate=0"
+	
+
+            function init() {
+                viewer = new Seadragon.Viewer("container",djbase);
+        //	   viewer.openDzi("./Hamlet/hamlet.xml");
+                viewer.openDzi("./locmap.xml");
+            }
+
+            Seadragon.Utils.addEvent(window, "load", init);
+            
+            // 	var djbase = "http://localhost:8080/adore-djatoka/resolver?url_ver=Z39.88-2004&rft_id=http://memory.loc.gov/gmd/gmd433/g4330/g4330/np000066.jp2&svc_id=info:lanl-repo/svc/getRegion&svc_val_fmt=info:ofi/fmt:kev:mtx:jpeg2000&svc.format=image/jpeg&svc.rotate=0";
+
+        </script>
+
+        <style type="text/css">
+            #container
+            {
+                width: 900px;
+                height: 500px;
+                background-color: black;
+                border: 1px solid black;
+                color: white;   /* for error messages, etc. */
+            }
+        </style>
+
+    </head>
+    <body>
+        <div id="container"></div>
+    </body>
+ </html>
